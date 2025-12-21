@@ -1,0 +1,65 @@
+# Build folders
+/build
+/server/build
+/client/build
+/common/build
+/out
+
+# Visual Studio cache and settings
+/.vs
+*.vcxproj.user
+*.vcxproj.filters
+
+# VS code
+.vscode/
+
+# class diagrams
+*."class diagram"/
+
+# Compiled binaries
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+
+# Object files
+*.obj
+*.o
+*.lo
+*.slo
+
+# CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+# Makefile
+.txt
+
+# Logs & temp
+*.log
+*.tmp
+*.cache
+
+# Generated folders
+server/Debug/
+server/Release/
+client/Debug/
+client/Release/
+
+# Ninja build files
+.ninja_deps
+.ninja_log
+*.ninja
+build.ninja
+
+# vscode settings
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+*.json
+
+# media files
+*.mjpeg
+*.Mjpeg
