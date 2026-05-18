@@ -58,7 +58,6 @@ build.ninja
 .vscode/settings.json
 .vscode/launch.json
 .vscode/tasks.json
-*.json
 
 # media files
 *.mjpeg
