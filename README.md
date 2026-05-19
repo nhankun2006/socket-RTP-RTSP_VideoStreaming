@@ -1,8 +1,14 @@
 ## 🛠️ Building the Project
 
-We use **CMake** and **CPM / vcpkg** to handle dependencies automatically.
+This repo has two parts:
+- **Client (C++)** uses **CMake** and **CPM / vcpkg** for dependencies.
+- **Server (Python)** uses the standard library only (no third-party packages required).
 
 ### Prerequisites
+
+#### Server (Python)
+1. **Python 3.9+**
+2. *(Optional but recommended)* **venv** for isolation
 
 #### Windows
 1.  **CMake**
@@ -27,7 +33,7 @@ We use **CMake** and **CPM / vcpkg** to handle dependencies automatically.
     * **Fedora/RHEL:** `sudo dnf install SDL2-devel SDL2_ttf-devel`
     * **Arch Linux:** `sudo pacman -S sdl2 sdl2_ttf`
 
-### How to Build
+### How to Build (Client)
 Run these commands in the project folder. Replace `[path/to/vcpkg]` with your actual vcpkg location if you are building on Windows with vcpkg.
 
 ### Build Command
@@ -35,4 +41,16 @@ Run these commands in the project folder. Replace `[path/to/vcpkg]` with your ac
 cmake -G "Ninja" -B build -S .
 cmake --build build
 ```
-*(Note for Linux users: Currently, this project heavily relies on Windows Sockets (`winsock2.h` / `ws2_32`). To make it fully cross-platform for Linux, you will need to replace the Winsock API with standard POSIX `<sys/socket.h>` or use a cross-platform library like `Boost.Asio`.)*
+*(Note for Linux users: the C++ client still contains Windows Sockets usage (`winsock2.h` / `ws2_32`). To make it fully cross-platform, replace the Winsock API with POSIX sockets or a cross-platform library like `Boost.Asio`.)*
+
+### How to Run (Server)
+```bash
+python3 server/main.py --video-root server --port 8089 --fps 25
+```
+
+#### Optional: create a venv
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 server/main.py --video-root server --port 8089 --fps 25
+```

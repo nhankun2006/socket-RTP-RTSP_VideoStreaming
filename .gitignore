@@ -41,6 +41,7 @@ cmake_install.cmake
 *.log
 *.tmp
 *.cache
+__pycache__/
 
 # Generated folders
 server/Debug/
