@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
             mx, my, mouseDown
         );
 
-        SDL_Delay(10);
+        SDL_Delay(10000);
     }
 
     client.teardown();
